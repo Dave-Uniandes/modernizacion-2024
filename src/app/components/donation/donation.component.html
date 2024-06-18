@@ -1,0 +1,11 @@
+<div *ngIf="showCard" class="d-flex justify-content-center">
+    <div class="card m-2" style="width: 18rem;">
+        <button *ngIf="allowClose" (click)="closeCard()" class="close-card btn"></button>
+        <div class="card-body">
+          <h5 class="card-title">Calculadora Conmebol</h5>
+          <p class="card-text">Esta página es totalmente gratuita. Apóyanos con una donación voluntaria.</p>
+          <a class="card-link">Apoyar por Paypal:</a>
+          <button (click)="goToPayPal()" class="btn btn-info ml-2 paypal-btn"></button>
+        </div>
+    </div>
+</div>

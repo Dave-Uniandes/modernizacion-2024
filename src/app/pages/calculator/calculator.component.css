@@ -1,0 +1,60 @@
+.mundial-icon{
+    margin-top: 5px;
+    width: 80px;
+    height: 30px;
+    background-image: url('../../../assets/mundial_icon.png');
+    background-position: center;
+    background-size: 90%;
+    background-repeat: no-repeat;
+}
+
+.dark-mode{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    margin: 5px;
+    background-image: url('../../../assets/dark-mode.png');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.dark-mode:hover{
+    cursor: pointer;
+    background-size: 110%;
+}
+
+.dark-mode:active{
+    cursor: pointer;
+    background-size: 100%;
+}
+
+.paypal-btn{
+    padding: 0;
+    margin: 0px 5px 5px 5px !important;
+    width: 72px;
+    height: 38px;
+    border: none;
+    border: 2px dotted black;
+    background-color: #e9ecef;
+    background-image: url("../../../assets/paypal.png");
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.donate{
+    margin-left: 5px !important;
+}
+
+.stickyInfo{
+    word-wrap: break-word;
+}
+
+@media (max-width: 550px) {
+    .dark-mode{
+        width: 45px !important;
+        height: 45px !important;
+    }
+  }

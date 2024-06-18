@@ -1,0 +1,40 @@
+<footer class="page-footer font-small special-color-dark pt-4 bg-dark">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 mb-4 text-light">
+            <div class="font-weight-bold">Creador:</div>
+            <div>David Borrero Varona</div>
+            <div class="social-network">
+                <div class="sn" class="d-flex">
+                    <a href="https://www.linkedin.com/in/davidborrerovarona/" class="s-network linkedin"></a>
+                    <a href="https://www.instagram.com/borrerovaronna/" class="s-network instagram"></a>
+                </div>
+            </div>
+            <br>
+            <div class="Technologies d-flex align-items-center">
+                <div class="text-light mr-1">Powered by</div>
+                <div class="angular"></div>
+                <div class="bootstrap"></div>
+            </div>
+            <div style="font-size: 12px; margin-top: 5px; color: #9ea0a1">Donaciones voluntarias:</div>
+            <div class="qr-donation">
+
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6 m-0 mb-4">
+          <form (ngSubmit)="send($event)">
+            <div class="form-group">
+                <label class="text-light" for="exampleFormControlTextarea1">Envíanos un comentario:</label>
+                <textarea [(ngModel)]="comment" (ngModelChange)="getValue($event)" [ngModelOptions]="{standalone: true}" placeholder="Queremos conocer tus opiniones..." class="form-control"  rows="3"></textarea>
+            </div>
+            <button [disabled]="!enableBtn" type="submit" class="btn btn-info col-sm-12 col-md-4 col-lg-2">Enviar</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3 text-secondary">© 2023 Copyright.</div>
+  
+  </footer>

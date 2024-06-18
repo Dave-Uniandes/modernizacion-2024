@@ -1,0 +1,1118 @@
+<div class="jumbotron" *ngIf="fixtureSelected === 1">
+    <h4>Fecha 1</h4>
+    <div class="journey">07/09/2023 - 08/09/2023</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/uruguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Uruguay</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_1[0].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_1[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Chile</div>
+        <img src="assets/flags/chile.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/colombia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Colombia</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_1[1].golLocal" [ngModelOptions]="{standalone: true}"  type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_1[1].golVisitor" [ngModelOptions]="{standalone: true}"  type="number" min="0">
+        <div class="ml-4 name text-right">Venezuela</div>
+        <img src="assets/flags/venezuela.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/brasil.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Brasil</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_1[2].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_1[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Bolivia</div>
+        <img src="assets/flags/bolivia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/paraguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Paraguay</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_1[3].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_1[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Perú</div>
+        <img src="assets/flags/peru.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/argentina.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Argentina</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_1[4].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_1[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Ecuador</div>
+        <img src="assets/flags/ecuador.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button disabled="true" class="btn m-1 btn-info">Anterior</button>
+        <button [disabled]="true" (click)="calculate(1)" class="btn m-1 btn-info">Calcular</button>
+        <button [disabled]="true" (click)="deleteValues(1)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(2)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+<div class="jumbotron" *ngIf="fixtureSelected === 2">
+    <h4>Fecha 2</h4>
+    <div class="journey">12/09/2023</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/peru.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Perú</div>
+        <input class="inputDisabled" [disabled]="true" class="inputDisabled" [(ngModel)]="fixture_2[0].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_2[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Brasil</div>
+        <img src="assets/flags/brasil.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/venezuela.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Venezuela</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_2[1].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_2[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Paraguay</div>
+        <img src="assets/flags/paraguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/bolivia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Bolivia</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_2[2].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_2[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Argentina</div>
+        <img src="assets/flags/argentina.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/chile.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Chile</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_2[3].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_2[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Colombia</div>
+        <img src="assets/flags/colombia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/ecuador.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Ecuador</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_2[4].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input class="inputDisabled" [disabled]="true" [(ngModel)]="fixture_2[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Uruguay</div>
+        <img src="assets/flags/uruguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(1)" class="btn m-1 btn-info">Anterior</button>
+        <button [disabled]="true" (click)="calculate(2)" class="btn m-1 btn-info">Calcular</button>
+        <button [disabled]="true" (click)="deleteValues(2)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(3)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+<div class="jumbotron" *ngIf="fixtureSelected === 3">
+    <h4>Fecha 3</h4>
+    <div class="journey">12/10/2023</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/colombia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Colombia</div>
+        <input [(ngModel)]="fixture_3[0].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_3[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Uruguay</div>
+        <img src="assets/flags/uruguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/brasil.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Brasil</div>
+        <input [(ngModel)]="fixture_3[1].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_3[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Venezuela</div>
+        <img src="assets/flags/venezuela.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/bolivia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Bolivia</div>
+        <input [(ngModel)]="fixture_3[2].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_3[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Ecuador</div>
+        <img src="assets/flags/ecuador.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/argentina.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Argentina</div>
+        <input [(ngModel)]="fixture_3[3].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_3[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Paraguay</div>
+        <img src="assets/flags/paraguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/chile.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Chile</div>
+        <input [(ngModel)]="fixture_3[4].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_3[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Perú</div>
+        <img src="assets/flags/peru.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(2)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(3)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(3)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(4)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 4">
+    <h4>Fecha 4</h4>
+    <div class="journey">17/10/2023</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/uruguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Uruguay</div>
+        <input [(ngModel)]="fixture_4[0].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_4[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Brasil</div>
+        <img src="assets/flags/brasil.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/peru.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Perú</div>
+        <input [(ngModel)]="fixture_4[1].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_4[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Argentina</div>
+        <img src="assets/flags/argentina.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/venezuela.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Venezuela</div>
+        <input [(ngModel)]="fixture_4[2].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_4[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Chile</div>
+        <img src="assets/flags/chile.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/paraguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Paraguay</div>
+        <input [(ngModel)]="fixture_4[3].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_4[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Bolivia</div>
+        <img src="assets/flags/bolivia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/ecuador.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Ecuador</div>
+        <input [(ngModel)]="fixture_4[4].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_4[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Colombia</div>
+        <img src="assets/flags/colombia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(3)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(4)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(4)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(5)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 5">
+    <h4>Fecha 5</h4>
+    <div class="journey">16/11/2023</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/colombia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Colombia</div>
+        <input [(ngModel)]="fixture_5[0].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_5[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Brasil</div>
+        <img src="assets/flags/brasil.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/venezuela.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Venezuela</div>
+        <input [(ngModel)]="fixture_5[1].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_5[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Ecuador</div>
+        <img src="assets/flags/ecuador.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/bolivia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Bolivia</div>
+        <input [(ngModel)]="fixture_5[2].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_5[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Perú</div>
+        <img src="assets/flags/peru.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/argentina.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Argentina</div>
+        <input [(ngModel)]="fixture_5[3].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_5[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Uruguay</div>
+        <img src="assets/flags/uruguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/chile.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Chile</div>
+        <input [(ngModel)]="fixture_5[4].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_5[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Paraguay</div>
+        <img src="assets/flags/paraguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(4)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(5)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(5)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(6)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 6">
+    <h4>Fecha 6</h4>
+    <div class="journey">21/11/2023</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/uruguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Uruguay</div>
+        <input [(ngModel)]="fixture_6[0].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_6[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Bolivia</div>
+        <img src="assets/flags/bolivia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/peru.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Perú</div>
+        <input [(ngModel)]="fixture_6[1].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_6[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Venezuela</div>
+        <img src="assets/flags/venezuela.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/brasil.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Brasil</div>
+        <input [(ngModel)]="fixture_6[2].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_6[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Argentina</div>
+        <img src="assets/flags/argentina.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/paraguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Paraguay</div>
+        <input [(ngModel)]="fixture_6[3].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_6[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Colombia</div>
+        <img src="assets/flags/colombia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/ecuador.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Ecuador</div>
+        <input [(ngModel)]="fixture_6[4].golLocal" [ngModelOptions]="{standalone: true}" type="number">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_6[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Chile</div>
+        <img src="assets/flags/chile.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(5)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(6)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(6)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(7)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 7">
+    <h4>Fecha 7</h4>
+    <div class="journey">05/09/2024</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/uruguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Uruguay</div>
+        <input [(ngModel)]="fixture_7[0].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_7[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Paraguay</div>
+        <img src="assets/flags/paraguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/peru.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Perú</div>
+        <input [(ngModel)]="fixture_7[1].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_7[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Colombia</div>
+        <img src="assets/flags/colombia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/brasil.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Brasil</div>
+        <input [(ngModel)]="fixture_7[2].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_7[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Ecuador</div>
+        <img src="assets/flags/ecuador.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/bolivia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Bolivia</div>
+        <input [(ngModel)]="fixture_7[3].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_7[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Venezuela</div>
+        <img src="assets/flags/venezuela.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/argentina.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Argentina</div>
+        <input [(ngModel)]="fixture_7[4].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_7[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Chile</div>
+        <img src="assets/flags/chile.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(6)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(7)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(7)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(8)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 8">
+    <h4>Fecha 8</h4>
+    <div class="journey">10/09/2024</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/colombia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Colombia</div>
+        <input [(ngModel)]="fixture_8[0].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_8[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Argentina</div>
+        <img src="assets/flags/argentina.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/venezuela.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Venezuela</div>
+        <input [(ngModel)]="fixture_8[1].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_8[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Uruguay</div>
+        <img src="assets/flags/uruguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/paraguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Paraguay</div>
+        <input [(ngModel)]="fixture_8[2].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_8[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Brasil</div>
+        <img src="assets/flags/brasil.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/chile.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Chile</div>
+        <input [(ngModel)]="fixture_8[3].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_8[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Bolivia</div>
+        <img src="assets/flags/bolivia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/ecuador.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Ecuador</div>
+        <input [(ngModel)]="fixture_8[4].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_8[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Perú</div>
+        <img src="assets/flags/peru.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(7)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(8)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(8)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(9)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 9">
+    <h4>Fecha 9</h4>
+    <div class="journey">10/10/2024</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/peru.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Perú</div>
+        <input [(ngModel)]="fixture_9[0].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_9[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Uruguay</div>
+        <img src="assets/flags/uruguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/venezuela.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Venezuela</div>
+        <input [(ngModel)]="fixture_9[1].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_9[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Argentina</div>
+        <img src="assets/flags/argentina.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/bolivia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Bolivia</div>
+        <input [(ngModel)]="fixture_9[2].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_9[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Colombia</div>
+        <img src="assets/flags/colombia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/chile.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Chile</div>
+        <input [(ngModel)]="fixture_9[3].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_9[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Brasil</div>
+        <img src="assets/flags/brasil.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/ecuador.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Ecuador</div>
+        <input [(ngModel)]="fixture_9[4].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_9[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Paraguay</div>
+        <img src="assets/flags/paraguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(8)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(9)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(9)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(10)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 10">
+    <h4>Fecha 10</h4>
+    <div class="journey">15/10/2024</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/uruguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Uruguay</div>
+        <input [(ngModel)]="fixture_10[0].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_10[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Ecuador</div>
+        <img src="assets/flags/ecuador.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/colombia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Colombia</div>
+        <input [(ngModel)]="fixture_10[1].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_10[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Chile</div>
+        <img src="assets/flags/chile.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/brasil.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Brasil</div>
+        <input [(ngModel)]="fixture_10[2].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_10[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Perú</div>
+        <img src="assets/flags/peru.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/paraguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Paraguay</div>
+        <input [(ngModel)]="fixture_10[3].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_10[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Venezuela</div>
+        <img src="assets/flags/venezuela.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/argentina.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Argentina</div>
+        <input [(ngModel)]="fixture_10[4].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_10[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Bolivia</div>
+        <img src="assets/flags/bolivia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(9)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(10)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(10)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(11)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 11">
+    <h4>Fecha 11</h4>
+    <div class="journey">14/11/2024</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/uruguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Uruguay</div>
+        <input [(ngModel)]="fixture_11[0].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_11[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Colombia</div>
+        <img src="assets/flags/colombia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/peru.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Perú</div>
+        <input [(ngModel)]="fixture_11[1].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_11[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Chile</div>
+        <img src="assets/flags/chile.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/venezuela.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Venezuela</div>
+        <input [(ngModel)]="fixture_11[2].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_11[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Brasil</div>
+        <img src="assets/flags/brasil.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/paraguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Paraguay</div>
+        <input [(ngModel)]="fixture_11[3].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_11[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Argentina</div>
+        <img src="assets/flags/argentina.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/ecuador.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Ecuador</div>
+        <input [(ngModel)]="fixture_11[4].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_11[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Bolivia</div>
+        <img src="assets/flags/bolivia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(10)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(11)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(11)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(12)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 12">
+    <h4>Fecha 12</h4>
+    <div class="journey">19/11/2024</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/colombia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Colombia</div>
+        <input [(ngModel)]="fixture_12[0].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_12[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Ecuador</div>
+        <img src="assets/flags/ecuador.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/brasil.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Brasil</div>
+        <input [(ngModel)]="fixture_12[1].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_12[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Uruguay</div>
+        <img src="assets/flags/uruguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/bolivia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Bolivia</div>
+        <input [(ngModel)]="fixture_12[2].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_12[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Paraguay</div>
+        <img src="assets/flags/paraguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/argentina.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Argentina</div>
+        <input [(ngModel)]="fixture_12[3].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_12[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Perú</div>
+        <img src="assets/flags/peru.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/chile.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Chile</div>
+        <input [(ngModel)]="fixture_12[4].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_12[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Venezuela</div>
+        <img src="assets/flags/venezuela.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(11)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(12)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(12)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(13)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 13">
+    <h4>Fecha 13</h4>
+    <div class="journey">20/03/2025</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/uruguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Uruguay</div>
+        <input [(ngModel)]="fixture_13[0].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_13[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Argentina</div>
+        <img src="assets/flags/argentina.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/peru.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Perú</div>
+        <input [(ngModel)]="fixture_13[1].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_13[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Bolivia</div>
+        <img src="assets/flags/bolivia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/brasil.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Brasil</div>
+        <input [(ngModel)]="fixture_13[2].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_13[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Colombia</div>
+        <img src="assets/flags/colombia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/paraguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Paraguay</div>
+        <input [(ngModel)]="fixture_13[3].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_13[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Chile</div>
+        <img src="assets/flags/chile.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/ecuador.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Ecuador</div>
+        <input [(ngModel)]="fixture_13[4].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_13[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Venezuela</div>
+        <img src="assets/flags/venezuela.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(12)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(13)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(13)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(14)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 14">
+    <h4>Fecha 14</h4>
+    <div class="journey">25/03/2025</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/colombia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Colombia</div>
+        <input [(ngModel)]="fixture_14[0].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_14[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Paraguay</div>
+        <img src="assets/flags/paraguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/venezuela.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Venezuela</div>
+        <input [(ngModel)]="fixture_14[1].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_14[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Perú</div>
+        <img src="assets/flags/peru.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/bolivia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Bolivia</div>
+        <input [(ngModel)]="fixture_14[2].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_14[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Uruguay</div>
+        <img src="assets/flags/uruguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/argentina.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Argentina</div>
+        <input [(ngModel)]="fixture_14[3].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_14[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Brasil</div>
+        <img src="assets/flags/brasil.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/chile.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Chile</div>
+        <input [(ngModel)]="fixture_14[4].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_14[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Ecuador</div>
+        <img src="assets/flags/ecuador.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(13)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(14)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(14)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(15)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 15">
+    <h4>Fecha 15</h4>
+    <div class="journey">04/06/2025</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/colombia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Colombia</div>
+        <input [(ngModel)]="fixture_15[0].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_15[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Perú</div>
+        <img src="assets/flags/peru.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/venezuela.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Venezuela</div>
+        <input [(ngModel)]="fixture_15[1].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_15[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Bolivia</div>
+        <img src="assets/flags/bolivia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/paraguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Paraguay</div>
+        <input [(ngModel)]="fixture_15[2].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_15[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Uruguay</div>
+        <img src="assets/flags/uruguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/chile.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Chile</div>
+        <input [(ngModel)]="fixture_15[3].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_15[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Argentina</div>
+        <img src="assets/flags/argentina.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/ecuador.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Ecuador</div>
+        <input [(ngModel)]="fixture_15[4].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_15[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Brasil</div>
+        <img src="assets/flags/brasil.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(14)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(15)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(15)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(16)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 16">
+    <h4>Fecha 16</h4>
+    <div class="journey">09/06/2025</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/uruguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Uruguay</div>
+        <input [(ngModel)]="fixture_16[0].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_16[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Venezuela</div>
+        <img src="assets/flags/venezuela.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/peru.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Perú</div>
+        <input [(ngModel)]="fixture_16[1].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_16[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Ecuador</div>
+        <img src="assets/flags/ecuador.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/brasil.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Brasil</div>
+        <input [(ngModel)]="fixture_16[2].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_16[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Paraguay</div>
+        <img src="assets/flags/paraguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/bolivia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Bolivia</div>
+        <input [(ngModel)]="fixture_16[3].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_16[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Chile</div>
+        <img src="assets/flags/chile.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/argentina.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Argentina</div>
+        <input [(ngModel)]="fixture_16[4].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_16[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Colombia</div>
+        <img src="assets/flags/colombia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(15)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(16)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(16)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(17)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 17">
+    <h4>Fecha 17</h4>
+    <div class="journey">09/09/2025</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/uruguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Uruguay</div>
+        <input [(ngModel)]="fixture_17[0].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_17[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Perú</div>
+        <img src="assets/flags/peru.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/colombia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Colombia</div>
+        <input [(ngModel)]="fixture_17[1].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_17[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Bolivia</div>
+        <img src="assets/flags/bolivia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/brasil.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Brasil</div>
+        <input [(ngModel)]="fixture_17[2].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_17[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Chile</div>
+        <img src="assets/flags/chile.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/paraguay.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Paraguay</div>
+        <input [(ngModel)]="fixture_17[3].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_17[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Ecuador</div>
+        <img src="assets/flags/ecuador.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/argentina.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Argentina</div>
+        <input [(ngModel)]="fixture_17[4].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_17[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Venezuela</div>
+        <img src="assets/flags/venezuela.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(16)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(17)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(17)" class="btn m-1 btn-info">Borrar</button>
+        <button (click)="selection(18)" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>
+
+
+
+<div class="jumbotron" *ngIf="fixtureSelected === 18">
+    <h4>Fecha 18</h4>
+    <div class="journey">14/09/2025</div>
+    <div class="title d-flex justify-content-center">
+        <div>Local</div>
+        <div class="separator"></div>
+        <div>Visitante</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/peru.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Perú</div>
+        <input [(ngModel)]="fixture_18[0].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_18[0].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Paraguay</div>
+        <img src="assets/flags/paraguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/venezuela.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Venezuela</div>
+        <input [(ngModel)]="fixture_18[1].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_18[1].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Colombia</div>
+        <img src="assets/flags/colombia.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/bolivia.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Bolivia</div>
+        <input [(ngModel)]="fixture_18[2].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_18[2].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Brasil</div>
+        <img src="assets/flags/brasil.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/chile.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Chile</div>
+        <input [(ngModel)]="fixture_18[3].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_18[3].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Uruguay</div>
+        <img src="assets/flags/uruguay.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-1">
+        <img src="assets/flags/ecuador.png" alt="" class="flag mr-2">
+        <div class="mr-4 name text-left">Ecuador</div>
+        <input [(ngModel)]="fixture_18[4].golLocal" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="mr-2 ml-2">vs</div>
+        <input [(ngModel)]="fixture_18[4].golVisitor" [ngModelOptions]="{standalone: true}" type="number" min="0">
+        <div class="ml-4 name text-right">Argentina</div>
+        <img src="assets/flags/argentina.png" alt="" class="flag ml-2">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="selection(17)" class="btn m-1 btn-info">Anterior</button>
+        <button (click)="calculate(18)" class="btn m-1 btn-info">Calcular</button>
+        <button (click)="deleteValues(18)" class="btn m-1 btn-info">Borrar</button>
+        <button disabled="true" class="btn m-1 btn-info">siguiente</button>
+    </div>
+</div>

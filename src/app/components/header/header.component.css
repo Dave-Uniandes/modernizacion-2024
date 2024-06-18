@@ -1,0 +1,18 @@
+.logo{
+    width: 30px;
+    height: 30px;
+    background-image: url("../../../assets/logo-conmebol.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logo-texto{
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+    background-image: url("../../../assets/Conmebol_text_logo_2021.svg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

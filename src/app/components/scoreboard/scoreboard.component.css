@@ -1,0 +1,92 @@
+.jumbotron {
+    padding: 2rem 4rem;
+}
+
+h4 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.journey{
+    font-size: 12px;
+    text-align: center;
+    color: #9ea0a1;
+
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.title {
+    color: #9ea0a1;
+    margin-bottom: 5px;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+input:disabled{
+    color: #9ea0a1;
+}
+
+.flag {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1.5px solid;
+    border-color: gold;
+}
+
+.vs{
+    width: 20px;
+    height: 20px;
+    background-image: url('../../../assets/versus.png');
+    background-position: center;
+    background-size: 130%;
+    background-repeat: no-repeat;
+}
+
+.name{
+    width: 100px;
+}
+
+.separator{
+    width: 330px;
+}
+
+.inputDisabled{
+    border: 0.2px solid white;
+}
+
+@media (max-width: 540px) {
+    .jumbotron {
+        margin: 10px;
+        padding: 10px;
+    }
+  }
+
+@media (max-width: 420px) {
+    .name {
+        display: none;
+    }
+    .separator {
+        width: 90px;
+    }
+  }

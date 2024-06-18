@@ -1,0 +1,61 @@
+.s-network{
+    width: 25px;
+    height: 25px;
+    list-style: none;
+    margin-right: 5px;
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.s-network:hover{
+    cursor: pointer;
+    background-size: 100%;
+}
+.s-network:active{
+    background-size: 80%;
+}
+
+.instagram{
+    background-image: url("../../../assets/instagram.png");
+}
+
+.linkedin{
+    background-image: url("../../../assets/linkedin.png");
+
+}
+
+.angular {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../../../assets/angular-i.png");
+}
+
+.bootstrap{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-image: url("../../../assets/bootstrap.png");
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.qr-donation{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    background-image: url("../../../assets/qr_donation.JPG");
+    background-size: 100%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}

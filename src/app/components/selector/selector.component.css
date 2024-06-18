@@ -1,0 +1,51 @@
+
+.fixtures-container {
+    
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; 
+    scrollbar-width: thin !important;
+}
+
+.fixture {
+    flex: 0 0 auto;
+    margin: 2px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.fixture:hover {
+    cursor: pointer;
+}
+
+.fixture:active{
+    background-color: #9ea0a1;
+}
+
+.btnOn {
+    background-color: #9ea0a1;
+}
+
+.btnOff {
+    background-color: white;
+}
+
+@media (max-width: 800px) {
+    .fixtures-container {
+        display: -webkit-box!important;
+    }
+  }
+
+@media (max-width: 768px) {
+    .fixture {
+        width: 50px;
+        height: 50px;
+    }
+  }
+  
