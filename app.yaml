@@ -1,0 +1,10 @@
+runtime: python39
+
+handlers:
+  - url: /
+    static_files: dist/calculator-conmebol/index.html
+    upload: dist/calculator-conmebol/index.html
+
+  - url: /(.*)
+    static_files: dist/calculator-conmebol/\1
+    upload: dist/calculator-conmebol/(.*)

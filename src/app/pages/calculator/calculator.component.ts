@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalendarService } from 'src/app/components/scoreboard/calendar.service';
 
 @Component({
   selector: 'app-calculator',
@@ -10,6 +11,19 @@ export class CalculatorComponent implements OnInit{
   public fSelected = 3;
   public data = 'data';
   public darkModeBool = false;
+
+  constructor(private calendarService: CalendarService) {}
+
+  dates: Date[] = [];
+
+  getCalendar(): void {
+    this.calendarService.getCalendar().subscribe((calendar) => {
+      const dates = calendar.listDates.map((date) => {
+        return { matches: date };
+      });
+      this.dates = dates as any;
+    });
+  }
 
   public fixture_1 = [
     {
@@ -717,11 +731,15 @@ export class CalculatorComponent implements OnInit{
   public ngOnInit(): void {
     this.calculate(1)
     this.calculate(2)
-    this.dataSource.sort(this.sortData)
+    this.getCalendar();
   }
+
+  selectedDate : Date = {} as Date
+
 
   public fixtureSelected(fixture: number) {
     this.fixtureS = fixture;
+    this.selectedDate = this.dates[fixture - 1]
   }
 
   public fselected(fixture: number) {
@@ -2135,152 +2153,7 @@ export class CalculatorComponent implements OnInit{
         });
         break;
     }
-    this.summation();
-    this.dataSource.sort(this.sortData)
   }
-
-  public dataSource = [
-    {
-      id: 1,
-      flag: 'assets/flags/argentina.png',
-      country: 'Argentina',
-      played: 2,
-      won: 2,
-      drawn: 0,
-      lost: 0,
-      gf: 4,
-      ga: 0,
-      gd: 4,
-      points: 6,
-      class: '',
-    },
-    {
-      id: 2,
-      flag: 'assets/flags/bolivia.png',
-      country: 'Bolivia',
-      played: 2,
-      won: 0,
-      drawn: 0,
-      lost: 2,
-      gf: 1,
-      ga: 8,
-      gd: -7,
-      points: 0,
-      class: '',
-    },
-    {
-      id: 3,
-      flag: 'assets/flags/brasil.png',
-      country: 'Brasil',
-      played: 2,
-      won: 2,
-      drawn: 0,
-      lost: 0,
-      gf: 6,
-      ga: 1,
-      gd: 5,
-      points: 6,
-      class: '',
-    },
-    {
-      id: 4,
-      flag: 'assets/flags/chile.png',
-      country: 'Chile',
-      played: 2,
-      won: 0,
-      drawn: 1,
-      lost: 1,
-      gf: 1,
-      ga: 3,
-      gd: -2,
-      points: 1,
-      class: '',
-    },
-    {
-      id: 5,
-      flag: 'assets/flags/colombia.png',
-      country: 'Colombia',
-      played: 2,
-      won: 1,
-      drawn: 1,
-      lost: 0,
-      gf: 1,
-      ga: 0,
-      gd: 1,
-      points: 4,
-      class: '',
-    },
-    {
-      id: 6,
-      flag: 'assets/flags/ecuador.png',
-      country: 'Ecuador',
-      played: 2,
-      won: 1,
-      drawn: 0,
-      lost: 1,
-      gf: 2,
-      ga: 2,
-      gd: 0,
-      points: 0,
-      class: '',
-    },
-    {
-      id: 7,
-      flag: 'assets/flags/paraguay.png',
-      country: 'Paraguay',
-      played: 2,
-      won: 0,
-      drawn: 1,
-      lost: 1,
-      gf: 0,
-      ga: 1,
-      gd: -1,
-      points: 1,
-      class: '',
-    },
-    {
-      id: 8,
-      flag: 'assets/flags/peru.png',
-      country: 'Perú',
-      played: 2,
-      won: 0,
-      drawn: 1,
-      lost: 1,
-      gf: 0,
-      ga: 1,
-      gd: -1,
-      points: 1,
-      class: '',
-    },
-    {
-      id: 9,
-      flag: 'assets/flags/uruguay.png',
-      country: 'Uruguay',
-      played: 2,
-      won: 1,
-      drawn: 0,
-      lost: 1,
-      gf: 4,
-      ga: 3,
-      gd: 1,
-      points: 3,
-      class: '',
-    },
-    {
-      id: 10,
-      flag: 'assets/flags/venezuela.png',
-      country: 'Venezuela',
-      played: 2,
-      won: 1,
-      drawn: 0,
-      lost: 1,
-      gf: 1,
-      ga: 1,
-      gd: 0,
-      points: 3,
-      class: '',
-    },
-  ];
 
   
 
@@ -4322,9 +4195,6 @@ export class CalculatorComponent implements OnInit{
     
   }
 
-  public reorderDataSource(){
-    this.dataSource = this.dataSource.sort((p1: any, p2: any) => (p1.points < p2.points) ? 1 : (p1.points > p2.points) ? -1 : 0);
-  }
 
   public sortData(a: any, b: any) {
     if (a.points !== b.points) {
@@ -4340,165 +4210,6 @@ export class CalculatorComponent implements OnInit{
       return a.ga - b.ga;
     }
     return a.country.localeCompare(b.country);
-  }
-
-  public summation() {
-    this.dataSource.forEach((element:any) => {
-      const idCountry = element.id;
-      const equatorPoints = idCountry === 6 ? -3 : 0;
-      element.played = this.dataSource_1.find((element: any) => element?.id === idCountry)?.played +
-                      this.dataSource_2.find((element: any) => element.id === idCountry)?.played +
-                      this.dataSource_3.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_4.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_5.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_6.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_7.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_8.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_9.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_10.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_11.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_12.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_13.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_14.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_15.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_16.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_17.find((element: any) => element.id === idCountry)?.played + 
-                      this.dataSource_18.find((element: any) => element.id === idCountry)?.played;
-
-      element.won = this.dataSource_1.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_2.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_3.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_4.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_5.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_6.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_7.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_8.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_9.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_10.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_11.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_12.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_13.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_14.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_15.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_16.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_17.find((element: any) => element.id === idCountry)?.won + 
-                    this.dataSource_18.find((element: any) => element.id === idCountry)?.won;
-
-      element.drawn = this.dataSource_1.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_2.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_3.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_4.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_5.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_6.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_7.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_8.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_9.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_10.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_11.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_12.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_13.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_14.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_15.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_16.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_17.find((element: any) => element.id === idCountry)?.drawn + 
-                      this.dataSource_18.find((element: any) => element.id === idCountry)?.drawn;
-
-      element.lost = this.dataSource_1.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_2.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_3.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_4.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_5.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_6.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_7.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_8.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_9.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_10.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_11.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_12.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_13.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_14.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_15.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_16.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_17.find((element: any) => element.id === idCountry)?.lost + 
-                      this.dataSource_18.find((element: any) => element.id === idCountry)?.lost;
-      
-      element.gf = this.dataSource_1.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_2.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_3.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_4.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_5.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_6.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_7.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_8.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_9.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_10.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_11.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_12.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_13.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_14.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_15.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_16.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_17.find((element: any) => element.id === idCountry)?.gf + 
-                      this.dataSource_18.find((element: any) => element.id === idCountry)?.gf;
-
-      element.ga = this.dataSource_1.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_2.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_3.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_4.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_5.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_6.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_7.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_8.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_9.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_10.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_11.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_12.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_13.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_14.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_15.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_16.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_17.find((element: any) => element.id === idCountry)?.ga + 
-                      this.dataSource_18.find((element: any) => element.id === idCountry)?.ga;
-      
-      element.gd = this.dataSource_1.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_2.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_3.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_4.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_5.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_6.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_7.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_8.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_9.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_10.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_11.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_12.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_13.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_14.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_15.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_16.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_17.find((element: any) => element.id === idCountry)?.gd + 
-                      this.dataSource_18.find((element: any) => element.id === idCountry)?.gd;
-
-      element.points =
-                      this.dataSource_1.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_2.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_3.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_4.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_5.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_6.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_7.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_8.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_9.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_10.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_11.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_12.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_13.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_14.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_15.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_16.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_17.find((element: any) => element.id === idCountry)?.points + 
-                      this.dataSource_18.find((element: any) => element.id === idCountry)?.points + equatorPoints;
-    });
   }
 
   public darkMode() {

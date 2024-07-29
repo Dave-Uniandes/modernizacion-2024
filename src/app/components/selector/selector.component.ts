@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Date } from '../scoreboard/calendar';
 
 @Component({
   selector: 'app-selector',
@@ -7,7 +8,8 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angu
 })
 export class SelectorComponent implements OnInit, OnChanges{
 
-  @Input() fSelected = 3;
+  @Input() fSelected = 1;
+
 
   ngOnInit(): void {
     this.fixtureSelected(this.fSelected);

@@ -1,0 +1,81 @@
+{
+    "info": {
+        "_postman_id": "2ab27658-d459-47c0-a54a-c4b591d375b2",
+        "name": "conmebol",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "ping",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost/conmebol/ping",
+                    "path": [
+                        "conmebol",
+                        "ping"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "save date",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost/conmebol",
+                    "path": [
+                        "conmebol"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"date\": {\n    \"id\":2\n  },\n  \"games\": [\n    {\n      \"id_match\": 1,\n      \"id_local\": 1,\n      \"id_visitor\": 2,\n      \"gol_local\": 1,\n      \"gol_visitor\":1\n    }\n  ]\n}"
+                }
+            }
+        },
+        {
+            "name": "list calendar",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost/conmebol/calendar",
+                    "path": [
+                        "conmebol",
+                        "calendar"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "list dates",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost/conmebol",
+                    "path": [
+                        "conmebol"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                }
+            }
+        }
+    ]
+}
